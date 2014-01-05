@@ -1,6 +1,6 @@
 Consultez les sites web suivants pour l'examen:
 
-[http://en.wikipedia.org/wiki/Cellular_automaton]
+http://en.wikipedia.org/wiki/Cellular_automaton
 http://plato.stanford.edu/entries/cellular-automata/
 http://mathworld.wolfram.com/CellularAutomaton.html
 http://mathworld.wolfram.com/ElementaryCellularAutomaton.html
