@@ -1,6 +1,6 @@
 Tema 2
 
-
+https://www.khanacademy.org/cs/silviameritoiu1230f/5136261425659904
 
 /**
  * A Turing machine (TM) is a very simple kind of computer,
