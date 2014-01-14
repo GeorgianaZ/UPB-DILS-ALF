@@ -1,26 +1,21 @@
 /*
- The grammar verifies a language defined bellow:
-	main()
-	{
-	What's up?
-	"1'st answer"
-	What are you doing?
-	"2'nd answer"
-	}
+ This grammar checks the following:
+	
 1'st answer -> "That's cool, man!
-2'nd answer -> "I hate alf" ,if the answer is "alf" otherwise "Ok, man!" . */
+2'nd answer -> "I hate alf" ,if the answer is "alf" otherwise "Ok, man!" 
+. */
 
 start
-  = main
+  = function
 
-main
- = "main()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
+function
+ = "function()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
 
 expr
- = "What's up?\n"[^\n]+"\n"DOING:question"\n"{return "That's cool,man!\n"+DOING;}
+ = "What's up?\n"[^\n]+"\n"Bla:q"\n"{return "That's cool,man!\n"+Bla;}
 
-question
- = "What are you doing?\n"DO:(a:hate/b:cool){return DO;}
+q
+ = "What are you doing?\n"D:(x:hate/y:cool){return D;}
 
 hate
  = "alf"i{return "I hate alf";}

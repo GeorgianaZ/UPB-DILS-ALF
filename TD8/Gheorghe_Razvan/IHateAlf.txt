@@ -1,38 +1,30 @@
 /*
- Gramatica verifica un limbaj de forma:
-	main()
-	{
-	What's up?
-	"1'st answer"
-	(What are you doing?
-	"2'nd answer")*
-	What are you doing?
-	alf
-	}
+This grammar checks the following:
+
 1'st answer -> "That's cool, man!
 2'nd answer -> "I hate alf" ,if the answer is alf  
 If the answer is not "alf",the question will be "What are you doing?\n"
-till the answer will be alf "alf" */
+till the answer will be "alf" */
 
 start
-  = main
+  = function
 
-main
- = "main()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
+function
+ = "function()\n{\n"WHATSUP:expr"}"{return WHATSUP;}
 
 expr
- = "What's up?\n" [^\n]+ "\n" DOING:questions
-{return "That's cool,man!\n"+DOING;}
+ = "What's up?\n" [^\n]+ "\n" Working:qmv
+{return "That's cool,man!\n"+Working;}
 
-questions
- =  question q1:hate {return q1;}
-/ question q1:other q2:questions {return q1+q2;};
+qmv
+ =  qs q1:hate {return q1;}
+/ qs q1:other q2:qmv{return q1+q2;};
 
-question
+qs
  = "What are you doing?\n";
 
 hate
  = "alf"i "\n"{return "I hate alf\n";}
 
-other 
+other
  = [^\n]+"\n"{return "Ok, man!\n";}
