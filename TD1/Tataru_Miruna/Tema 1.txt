@@ -1,0 +1,38 @@
+Tema 1 - Miruna Tataru
+
+solutia 1
+Regexp:Hello+
+Subject string: *Hello Hello Hello*
+n+ matches any string that contains at least one n
+
+Verificare Javascript - rezultat true
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+var patt1=new RegExp("Hello+");
+
+document.write(patt1.test("*Hello Hello Hello*"));
+</script>
+
+</body>
+</html>
+
+solutia 2
+Regexp: (\W|^)Hello*(\W|$)
+subject string: *Hello Hello Hello*
+explicatii: \W matches any character that’s not a letter, digit, or underscore. It prevents the regex from matching letters before or after the word.
+^ matches the start of a new line. 
+$ matches the end of a line. 
+n* matches any string that contains zero or more occurrences of n
+
+solutia 3
+Regexp: h[e!][l@]l[o@]
+Subject string: *hello hello hello*
+explicatii: 
+\W is not included, so that other characters can appear before or after any of the variants of hello. For example, the regex still matches hello in the following text:
+hello!! or ***hello***
+
+am folosit acest link pentru verificarea expresiilor regulate: 
+http://www.regular-expressions.info/javascriptexample.html
